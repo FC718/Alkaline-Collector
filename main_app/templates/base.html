@@ -1,0 +1,45 @@
+<!-- BASE HTML HOLDS ALL Our MARKUP -->
+<!-- BASE HTML -->
+
+{% load static %}
+<!-- When you load static you create a new style sheet -->
+<!-- So what youre doing is creating a new link -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alkaline Boys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <header class="navbar-fixed #00e676 green accent-3" >
+    <nav>
+      <div class="nav-wrapper #00e676 green accent-3">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;   ALKALINE BOYS</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'fruits_create' %}">Add a Fruit</a></li>
+                  <li><a href="{% url 'fruits_index' %}">View All Fruits</a></li>
+          <li><a href="{% url 'alkalines_create' %}">Add to the List</a></li>
+          <li><a href="{% url 'index' %}">Alkaline List</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer #00e676 green accent-3">
+    <div class="right #00e676 green accent-3">All Rights Reserved, © 2022 ALKALINE BOYS  </div>
+  </footer>
+</body>
+</html>

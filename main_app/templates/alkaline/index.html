@@ -1,0 +1,20 @@
+<!-- FOR EVERY TEMPLATE THAT WE DEFINE THIS IS THE BOILER PLATE -->
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Alkaline List</h1>
+
+{% for alkaline in alkalines %}
+<a href="{% url 'detail' alkaline.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ alkaline.name }}</span>
+            <p>Type: {{ alkaline.type }}</p>
+            <p>Description: {{ alkaline.description | linebreaks }}</p>
+            <p>Benefits: {{ alkaline.benefits }}</p>
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}
