@@ -3,11 +3,11 @@
 
 <h1>Fruit List</h1>
 
-{% for toy in toy_list %}
-  <a href="{% url 'fruits_detail' toy.id %}">
+{% for fruit in fruit_list %}
+  <a href="{% url 'fruits_detail' fruit.id %}">
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ toy.name }}</span>
+            <span class="card-title">{{ fruit.name }}</span>
             <p>Color: {{ fruit.color }}</p>
         </div>
     </div>

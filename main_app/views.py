@@ -25,6 +25,11 @@ def alkaline_index(request):
 
 def alkalines_detail(request, alkaline_id):
     alkaline = Alkaline.objects.get(id=alkaline_id)
+    # First, create a list of the fruit ids that alkaline DOES have
+    id_list = alkaline.fruits.all().values_list('id')
+    # query for the fruits that the alkaline list doesnt have
+
+
     # instantiate JuicingForm to be rendered
     juicing_form = JuicingForm()
     return render(request, 'alkaline/detail.html', {
@@ -33,7 +38,8 @@ def alkalines_detail(request, alkaline_id):
 
 class AlkalineCreate(CreateView):
     model = Alkaline
-    fields ='__all__'
+    fields = ['name', 'type', 'description', 'benefits']
+
 
 class AlkalineUpdate(UpdateView):
     model = Alkaline

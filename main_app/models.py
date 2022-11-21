@@ -16,7 +16,7 @@ class Fruit(models.Model):
     return self.name
 
   def get_absolute_url(self):
-    return reverse('toys_detail', kwargs={'pk': self.id})
+    return reverse('fruits_detail', kwargs={'pk': self.id})
 
 class Alkaline(models.Model):
     name = models.CharField(max_length=100)
