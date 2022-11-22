@@ -18,6 +18,8 @@ urlpatterns = [
     path('alkalines/<int:pk>/delete/', views.AlkalineDelete.as_view(), name='alkalines_delete'),
     
     path('alkalines/<int:alkaline_id>/add_juicing/', views.add_juicing, name='add_juicing'),
+    
+    path('alkalines/<int:alkaline_id>/add_juicing/', views.add_juicing, name='add_juicing'),
 
     path('fruits/', views.FruitList.as_view(), name='fruits_index'),
     

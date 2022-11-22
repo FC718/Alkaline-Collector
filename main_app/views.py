@@ -26,7 +26,8 @@ def alkaline_index(request):
 def alkalines_detail(request, alkaline_id):
     alkaline = Alkaline.objects.get(id=alkaline_id)
     # First, create a list of the fruit ids that alkaline DOES have
-    id_list = alkaline.fruits.all().values_list('id')
+    # id_list = alkaline.fruits.all().values_list('id')
+    # fruits_alkalie_doesnt_have = Fruit.objects.exclude(id_in=id)
     # query for the fruits that the alkaline list doesnt have
 
 
